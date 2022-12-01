@@ -1,8 +1,8 @@
 import React from 'react'
 import {useLocalStorage} from './useLocalStorage'
-const TodoContext = React.createContext()
+// const TodoContext = React.createContext()
 
-const TodoProvider = (props)=> {
+const useTodos = ()=> {
     const {
         item: todos,
         saveItem: saveTodos,
@@ -25,7 +25,6 @@ const TodoProvider = (props)=> {
           const searchText = searchValue.toLowerCase()
           return todoText.includes(searchText)
           })
-      //  searchedTodos=completedTodos
       }
       const addTodo = (text)=> {
         const newTodos = [...todos]
@@ -35,7 +34,7 @@ const TodoProvider = (props)=> {
         })
         saveTodos(newTodos)
       }    
-      const completeTodos = (text)=> {
+      const completeTodo = (text)=> {
         const todoIndex = todos.findIndex(todo => todo.text === text)
         const newTodos = [...todos]
         newTodos[todoIndex].completed= true
@@ -49,23 +48,21 @@ const TodoProvider = (props)=> {
       }
 
     return (
-        <TodoContext.Provider value={{
-            loading,
-            error,
-            totalTodos,
-            completedTodos,
-            searchValue,
-            setSearchValue,
-            searchedTodos,
-            addTodo,
-            completeTodos,
-            deleteTodo,
-            openModal, 
-            setOpenModal,
-        }}>
-            {props.children}
-        </TodoContext.Provider>
+      {
+        loading,
+        error,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
+        searchedTodos,
+        addTodo,
+        completeTodo,
+        deleteTodo,
+        openModal, 
+        setOpenModal,
+      }
     )
 }
 
-export {TodoContext, TodoProvider}
+export {useTodos}

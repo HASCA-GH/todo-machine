@@ -9,6 +9,7 @@
 }
 
 .TodoItem-p {
+    color: #4caf50;
     margin: 24px 0 24px 24px;
     width: calc(100% - 120px);
     font-size: 18px;
@@ -29,7 +30,6 @@
     width: 48px;
     font-size: 24px;
     font-weight: bold;
-    /* background-color: #CCC; */
 }
 
 .Icon-check {

@@ -5,10 +5,10 @@ import './TodoIcon.css'
 
 const iconTypes ={
     "check": color =>(
-        <CheckSVG className='Icon-svg Icon-svg--check' fill={color}/>
+        <CheckSVG className="Icon-svg Icon-svg--check" fill={color}/>
     ),
     "delete": color =>(
-        <DeleteSVG className='Icon-svg Icon-svg--delete' fill={color}/>
+        <DeleteSVG className="Icon-svg Icon-svg--delete" fill={color}/>
     ),
 }
 

@@ -1,11 +1,9 @@
 import React from 'react'
-import { TodoContext } from '../TodoContext'
 import './TodoForm.css'
-const TodoForm = ()=> {
+
+const TodoForm = ({addTodo, setOpenModal})=> {
     const [newTodoValue, setNewTodoValue] = React.useState('')
     
-    const {addTodo, setOpenModal} = React.useContext(TodoContext)
-
     const onChange = (e)=> {
         setNewTodoValue(e.target.value)
     }
@@ -19,7 +17,7 @@ const TodoForm = ()=> {
     }
 
     return (
-        <form onSubmit={onSubmit} action=''>
+        <form onSubmit={onSubmit} >
             <label>Escribe tu nuevo TODO</label>
             <textarea 
                 value={newTodoValue}

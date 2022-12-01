@@ -14,7 +14,7 @@ const TodoSearch = ({searchValue, setSearchValue}) => {
       value={searchValue}
       onChange={onSearchValueChange}
     />
-    <p>{searchValue}</p>
+    {/* <p>{searchValue}</p> */}
     </>
   )
 }
