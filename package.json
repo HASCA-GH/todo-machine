@@ -40,5 +40,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "Home": "https://HASCA-GH.github.io/todo-machine"
+  "homepage": "https://HASCA-GH.github.io/todo-machine"
 }
