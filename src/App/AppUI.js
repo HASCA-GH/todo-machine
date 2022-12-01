@@ -1,5 +1,6 @@
 import React from 'react'
 import {TodoContext} from '../TodoContext/index.js';
+import {TodoHeader} from '../TodoHeader/index.js';
 import {TodoCounter} from '../TodoCounter';
 import {TodoSearch} from '../TodoSearch'
 import {TodoList} from '../TodoList'
@@ -22,15 +23,22 @@ const AppUI = () => {
     openModal, 
     setOpenModal,
     totalTodos, 
-    completedTodos,    
+    completedTodos,
+    searchValue, 
+    setSearchValue,
   } = React.useContext(TodoContext)
   return (
     <>
-      <TodoCounter 
-        totalTodos={totalTodos} 
-        completedTodos={completedTodos} 
-      />
-      <TodoSearch />
+      <TodoHeader>
+        <TodoCounter 
+          totalTodos={totalTodos} 
+          completedTodos={completedTodos} 
+        />
+        <TodoSearch 
+          searchValue={searchValue} 
+          setSearchValue={setSearchValue}
+        />
+      </TodoHeader>
       <TodoList>
         {error && <TodosError error={error}/>}
         {loading && <TodosLoading />}
